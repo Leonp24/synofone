@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Smartphone</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+
+    <!-- mycss -->
+    <link rel="stylesheet" href="./mycss/style.css">
+    <link rel="stylesheet" href="./mycss/mobile.css">
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary ">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./assets/logo.png" alt=""></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <form class="d-flex" role="search">
+                        <input class="form-control" type="search" placeholder="cari smartphone apa?"
+                            aria-label="Search">
+                    </form>
+                    <hr class="d-block d-lg-none text-light">
+                    <a href="./login-page.html" class="btn btn-warning text-light me-2">Login</a>
+                    <a href="./daftar-page.html" class="btn btn-outline-light">Daftar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- detail -->
+    <section id="detail">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="card">
+                        <img src="./assets/hp3.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="deskripsi">
+                        <h4>Iphone 15 Pro Max</h4>
+                        <br>
+                        <div class="spec">
+                            <h6>Spesifikasi : </h6>
+                            <ul>
+                                <li>Chip A17 Pro, CPU 6‑core</li>
+                                <li>GPU 6‑core</li>
+                                <li>Layar 6.7 inch</li>
+                                <li>Layar Super Retina XDR</li>
+                            </ul>
+                        </div>
+                        <br>
+                        <div class="colors">
+                            <h6>Pilihan Warna :</h6>
+                            <div class="color-options mt-3">
+                                <button class="btn">Grey</button>
+                                <button class="btn">Red</button>
+                                <button class="btn">Purple</button>
+                            </div>
+                        </div>
+                        <br>
+                        <h6>Jumlah</h6>
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <form action="">
+                                    <input type="number" name="Jumlah" class="form-control" value="1">
+                                </form>
+                            </div>
+                            <div class="col-lg-10">
+                                <a href="./login-page.html" class="btn btn-primary w-100">Masukkan Keranjang</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- detail -->
+
+    <hr class="d-block d-lg-none mt-5">
+
+    <!-- unggulan -->
+    <section id="unggulan">
+        <div class="container mt-5">
+            <div class="row mb-3">
+                <h5>Smartphone Unggulan</h5>
+            </div>
+
+            <!-- desktop view -->
+            <div class="row">
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="card">
+                        <img src="./assets/hp1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="./detail-page.html" class="card-text">Xiaomi Redmi Note 13</a>
+                            <h5>IDR 500.000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="card">
+                        <img src="./assets/hp2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="./detail-page.html" class="card-text">Oppo A79 5G</a>
+                            <h5>IDR 500.000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="card">
+                        <img src="./assets/hp3.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="./detail-page.html" class="card-text">Iphone 15 Pro Max</a>
+                            <h5>IDR 500.000</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 d-none d-lg-block">
+                    <div class="card">
+                        <img src="./assets/hp4.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <a href="./detail-page.html" class="card-text">Samsung Falaxy S23 FE</a>
+                            <h5>IDR 500.000</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- mobile view -->
+            <div class="row">
+                <div class="col-lg-12 d-lg-none">
+                    <!-- Slider main container -->
+                    <div class="swiper d-block">
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="col-lg-3">
+                                    <div class="card">
+                                        <img src="./assets/hp1.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a href="./detail-page.html" class="card-text">Xiaomi Redmi Note 13</a>
+                                            <h5>IDR 500.000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-lg-3">
+                                    <div class="card">
+                                        <img src="./assets/hp2.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a href="./detail-page.html" class="card-text">Oppo A79 5G</a>
+                                            <h5>IDR 500.000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-lg-3">
+                                    <div class="card">
+                                        <img src="./assets/hp3.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a href="./detail-page.html" class="card-text">Iphone 15 Pro Max</a>
+                                            <h5>IDR 500.000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="col-lg-3">
+                                    <div class="card">
+                                        <img src="./assets/hp4.png" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <a href="./detail-page.html" class="card-text">Samsung Falaxy S23 FE</a>
+                                            <h5>IDR 500.000</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <!-- unggulan -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container mt-5">
+            <hr>
+            &copy; Copyright Reserved, Synofone 2024
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+    <script>
+
+        // swiper section unggulan & lainnya
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+        });
+    </script>
+</body>
+
+</html>

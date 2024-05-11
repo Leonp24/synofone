@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buat Akun</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+
+    <!-- mycss -->
+    <link rel="stylesheet" href="./mycss/style.css">
+    <link rel="stylesheet" href="./mycss/mobile.css">
+</head>
+
+<body>
+    <!-- daftar -->
+    <section id="daftar">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6">
+                    <h1>Buat Akun</h1>
+                    <p>Buat akun untuk mulai belanja.</p>
+
+                    <form action="./login-page.html">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" name="nama-lengkap" placeholder="Masukkan Nama Lengkap"
+                                    class="form-control" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="telp">Nomor Telepon</label>
+                                <input type="text" name="telpon" placeholder="Masukkan Nomor Telepon"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <label for="email">Email</label>
+                                <input type="email" name="email" placeholder="Masukkan Email" class="form-control" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" placeholder="Masukkan Password"
+                                    class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <label for="alamat">Alamat</label>
+                                <textarea name="alamat" id="alamat" class="form-control" rows="5" placeholder="Masukkan Alamat"></textarea>
+                            </div>
+                        </div>
+
+                        <input type="submit" value="Buat Akun" class="btn btn-primary mt-5">
+                    </form>
+
+                    <p class="mt-5">Sudah punya akun? <a href="./login-page.html">Masuk</a></p>
+                </div>
+
+                <div class="col-lg-6">
+                    <img src="./assets/image 5.png" class="w-100" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- daftar -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container mt-5">
+            <hr>
+            &copy; Copyright Reserved, Synofone 2024
+        </div>
+    </footer>
+    <!-- footer -->
+</body>
+
+</html>

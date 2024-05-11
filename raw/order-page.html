@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <script src="./js/bootstrap.bundle.js"></script>
+
+    <!-- mycss -->
+    <link rel="stylesheet" href="./mycss/style.css">
+    <link rel="stylesheet" href="./mycss/mobile.css">
+
+    <!-- iconify -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-primary ">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="./assets/logo.png" alt=""></a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav d-flex align-items-center">
+                    <form class="d-flex" role="search">
+                        <input class="form-control" type="search" placeholder="cari smartphone apa?"
+                            aria-label="Search">
+                    </form>
+                    <hr class="d-block d-lg-none text-light">
+                    <a href="./cart-page.html" class="text-light me-3"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <div class="dropdown-center">
+                        <button class="dropdown-toggle text-light profil" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-user"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="./index.html">Log Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- order -->
+    <section id="order">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="produk mt-5">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="card mb-3">
+                                    <img src="./assets/hp3.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h5>Iphone 15 Pro Max</h5>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <form action="">
+                                            <label for="">Jumlah</label>
+                                            <input type="number" name="jumlah" class="form-control" value="1">
+                                        </form>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <label for="">Harga</label>
+                                        <h5>IDR 500.000</h5>
+                                    </div>
+                                </div>
+                                <hr class="d-block d-lg-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-buyer">
+                        <form action="">
+                            <label for="">Alamat</label>
+                            <textarea name="alamat" id="alamat" class="form-control" placeholder="Masukkan Alamat"
+                                rows="5">Auto Fill Alamat</textarea>
+                        </form>
+                        <label for="">Metode Pengiriman</label>
+                        <select id="pengiriman" class="form-control">
+                            <option selected>-- Pilih Satu --</option>
+                            <hr class="mt-5 mb-5">
+                            <option value="reguler">Reguler | IDR 20.000</option>
+                            <option value="ekspres">Ekspres | IDR 50.000</option>
+                        </select>
+                        <label for="">Metode Pembayaran</label>
+                        <select id="bayar" class="form-control" onchange="tampilkanMetodePembayaran()">
+                            <option selected value="">-- Pilih Satu --</option>
+                            <hr>
+                            <option value="bank">Transfer Bank</option>
+                            <option value="gopay">Gopay</option>
+                        </select>
+
+                        <div id="row-bank" class="row" style="display: none;">
+                            <div class="col-md-3">
+                                <img src="./assets/ic-bca.png" alt="" width="120px">
+                            </div>
+                            <div class="col-md-9">
+                                <p>Bank BCA</p>
+                                <h6>01234567890</h6>
+                                <p>a.n Synofone</p>
+                            </div>
+                        </div>
+
+                        <div id="row-gopay" class="row" style="display: none;">
+                            <div class="col-md-3">
+                                <img src="./assets/ic-gopay.png" alt="" width="120px">
+                            </div>
+                            <div class="col-md-9">
+                                <p>Gopay</p>
+                                <h6>01234567890</h6>
+                                <p>a.n Synofone</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rincian mt-5">
+                        <h6>Rincian Pembayaran</h6>
+                        <p>Harga : <b>IDR 500.000</b></p>
+                        <p>Ongkos Kirim : <b>IDR 20.000</b></p>
+                        <p>Total : <b>IDR 520.000</b></p>
+                    </div>
+
+                    <a href="./status-page.html" class="btn btn-primary w-100 mt-3">Konfirmasi</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- order -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container mt-5">
+            <hr>
+            &copy; Copyright Reserved, Synofone 2024
+        </div>
+    </footer>
+    <!-- footer -->
+
+
+
+    <script>
+        function tampilkanMetodePembayaran() {
+            const metodePembayaran = document.getElementById('bayar').value;
+
+            if (metodePembayaran === 'bank') {
+                document.getElementById('row-bank').style.display = 'flex';
+                document.getElementById('row-gopay').style.display = 'none';
+            } else if (metodePembayaran === 'gopay') {
+                document.getElementById('row-bank').style.display = 'none';
+                document.getElementById('row-gopay').style.display = 'flex';
+            } else {
+                document.getElementById('row-bank').style.display = 'none';
+                document.getElementById('row-gopay').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
