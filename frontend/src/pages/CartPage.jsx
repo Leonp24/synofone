@@ -4,19 +4,16 @@ import { Link } from 'react-router-dom';
 import NavComponent from '../components/NavComponent';
 
 const CartPage = () => {
-    const [show, setShow] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const [cartItems, setCartItems] = useState([
         { id: 1, name: 'Iphone 15 Pro Max', price: 500000, quantity: 1, image: 'hp3.png' },
         { id: 2, name: 'Vivo V30 5G', price: 500000, quantity: 1, image: 'hp6.png' }
     ]);
 
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
     const handleRemoveItem = (itemId) => {
         const updatedItems = cartItems.filter(item => item.id !== itemId);
         setCartItems(updatedItems);
-        handleClose(); // Sembunyikan modal setelah menghapus item
+        setShowModal(false); // Sembunyikan modal setelah menghapus item
     };
 
     return (
@@ -24,7 +21,7 @@ const CartPage = () => {
             <NavComponent />
             <div id="cart">
                 <Container className="mt-5">
-                    {cartItems.length === 0 ? ( // Tampilkan pesan jika keranjang kosong
+                    {cartItems.length === 0 ? (
                         <Row>
                             <Col>
                                 <h1>Keranjang masih kosong :(</h1>
@@ -56,7 +53,10 @@ const CartPage = () => {
                                                             <h5>IDR {item.price}</h5>
                                                         </Col>
                                                         <Col className="text-end">
-                                                            <Button variant="danger" onClick={() => handleShow()}>
+                                                            <Button
+                                                                variant="danger"
+                                                                onClick={() => setShowModal(true)}
+                                                            >
                                                                 Hapus
                                                             </Button>
                                                         </Col>
@@ -79,20 +79,20 @@ const CartPage = () => {
                             </Col>
                         </Row>
                     )}
-                </Container>
 
-                {/* Modal Hapus Item */}
-                <Modal show={show} onHide={handleClose} centered>
-                    <Modal.Body className="text-center">
-                        <h4 className="mb-3">Yakin Ingin Hapus Item?</h4>
-                        <Button variant="secondary me-2" onClick={handleClose}>
-                            Batal
-                        </Button>
-                        <Button variant="danger" onClick={() => handleRemoveItem(cartItems.find(item => item.name === 'Iphone 15 Pro Max').id)}>
-                            Yakin
-                        </Button>
-                    </Modal.Body>
-                </Modal>
+                    {/* Modal Hapus Item */}
+                    <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+                        <Modal.Body className="text-center">
+                            <h4 className="mb-3">Yakin Ingin Hapus Item?</h4>
+                            <Button variant="secondary me-2" onClick={() => setShowModal(false)}>
+                                Batal
+                            </Button>
+                            <Button variant="danger" onClick={() => handleRemoveItem(cartItems[0].id)}>
+                                Yakin
+                            </Button>
+                        </Modal.Body>
+                    </Modal>
+                </Container>
             </div>
         </>
     );
