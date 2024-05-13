@@ -6,14 +6,32 @@ import NavComponent from '../components/NavComponent';
 const CartPage = () => {
     const [showModal, setShowModal] = useState(false);
     const [cartItems, setCartItems] = useState([
-        { id: 1, name: 'Iphone 15 Pro Max', price: 500000, quantity: 1, image: 'hp3.png' },
-        { id: 2, name: 'Vivo V30 5G', price: 500000, quantity: 1, image: 'hp6.png' }
+        { id: 1, name: 'Iphone 15 Pro Max', price: 500000, quantity: 1, image: 'hp3.png' }
     ]);
 
     const handleRemoveItem = (itemId) => {
         const updatedItems = cartItems.filter(item => item.id !== itemId);
         setCartItems(updatedItems);
         setShowModal(false); // Sembunyikan modal setelah menghapus item
+    };
+
+    const handleJumlahChange = (event, itemId) => {
+        const newQuantity = parseInt(event.target.value);
+        const updatedItems = cartItems.map(item => {
+            if (item.id === itemId) {
+                return { ...item, quantity: newQuantity };
+            }
+            return item;
+        });
+        setCartItems(updatedItems);
+    };
+
+    const calculateTotalItems = () => {
+        return cartItems.reduce((total, item) => total + item.quantity, 0);
+    };
+
+    const calculateTotalBelanja = () => {
+        return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
     };
 
     return (
@@ -47,7 +65,14 @@ const CartPage = () => {
                                                             <Link to="/detail" className="card-title">{item.name}</Link>
                                                             <Form>
                                                                 <Form.Label>Jumlah :</Form.Label>
-                                                                <Form.Control type="number" name="jumlah" defaultValue={item.quantity} />
+                                                                <Form.Control
+                                                                    type="number"
+                                                                    name="jumlah"
+                                                                    min={1}
+                                                                    defaultValue={item.quantity}
+                                                                    value={item.quantity}
+                                                                    onChange={(e) => handleJumlahChange(e, item.id)}
+                                                                />
                                                             </Form>
                                                             <p className="mt-2">Harga :</p>
                                                             <h5>IDR {item.price}</h5>
@@ -71,8 +96,8 @@ const CartPage = () => {
                                 <div className="ringkasan">
                                     <Card>
                                         <h5>Ringkasan Belanja</h5>
-                                        <p><b>Total Item</b> : {cartItems.length}</p>
-                                        <p><b>Total Belanja</b> : IDR {cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)}</p>
+                                        <p><b>Total Item</b> : {calculateTotalItems()}</p>
+                                        <p><b>Total Belanja</b> : IDR {calculateTotalBelanja()}</p>
                                         <Link to="/order" className="btn btn-primary w-100">Check Out</Link>
                                     </Card>
                                 </div>

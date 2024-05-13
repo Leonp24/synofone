@@ -2,7 +2,7 @@ const FooterComponent = () => {
     return (
         <>
             <footer>
-                <div class="container mt-5">
+                <div className="container mt-5">
                     <hr />
                     &copy; Copyright Reserved, Synofone 2024
                 </div>

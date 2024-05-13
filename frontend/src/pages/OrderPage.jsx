@@ -1,83 +1,101 @@
-import { Container, Row, Col, Card, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import NavComponent from "../components/NavComponent";
-import FooterComponent from "../components/FooterComponent";
-
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import NavComponent from '../components/NavComponent';
+import FooterComponent from '../components/FooterComponent';
 
 const OrderPage = () => {
-    function tampilkanMetodePembayaran() {
-        const metodePembayaran = document.getElementById('bayar').value;
+    const [jumlah, setJumlah] = useState(1);
+    const [metodePembayaran, setMetodePembayaran] = useState('');
+    const [metodePengiriman, setMetodePengiriman] = useState('');
 
-        if (metodePembayaran === 'bank') {
-            document.getElementById('row-bank').style.display = 'flex';
-            document.getElementById('row-gopay').style.display = 'none';
-        } else if (metodePembayaran === 'gopay') {
-            document.getElementById('row-bank').style.display = 'none';
-            document.getElementById('row-gopay').style.display = 'flex';
-        } else {
-            document.getElementById('row-bank').style.display = 'none';
-            document.getElementById('row-gopay').style.display = 'none';
-        }
-    }
+    const hargaProduk = 500000; // Harga produk per unit
+
+    // Event handler untuk mengubah nilai jumlah
+    const handleJumlahChange = (event) => {
+        const newJumlah = parseInt(event.target.value);
+        setJumlah(newJumlah);
+    };
+
+    // Event handler untuk mengubah metode pembayaran
+    const handleMetodePembayaranChange = (event) => {
+        const selectedMetode = event.target.value;
+        setMetodePembayaran(selectedMetode);
+    };
+
+    // Event handler untuk mengubah metode pengiriman
+    const handleMetodePengirimanChange = (event) => {
+        const selectedMetode = event.target.value;
+        setMetodePengiriman(selectedMetode);
+    };
+
+    // Menghitung total belanja berdasarkan jumlah dan metode pengiriman
+    const calculateTotalBelanja = () => {
+        const hargaPengiriman = metodePengiriman === 'reguler' ? 20000 : metodePengiriman === 'ekspres' ? 50000 : 0;
+        const totalHarga = hargaProduk * jumlah + hargaPengiriman;
+        return totalHarga;
+    };
 
     return (
         <>
             <NavComponent />
-            <div id="order">
-                <Container>
-                    <Row>
-                        <Col lg={6}>
-                            <div className="produk mt-5">
-                                <Row>
-                                    <Col lg={4}>
-                                        <Card className="mb-3">
-                                            <img src="./src/assets/hp3.png" width="100%" alt="" />
-                                        </Card>
-                                    </Col>
-                                    <Col lg={6}>
-                                        <h5>Iphone 15 Pro Max</h5>
-                                        <Row>
-                                            <Col lg={4}>
-                                                <Form>
-                                                    <Form.Label>Jumlah :</Form.Label>
-                                                    <Form.Control type="number" name="jumlah" />
-                                                </Form>
-                                            </Col>
-                                            <Col lg={8}>
-                                                <label htmlFor="harga">Harga</label>
-                                                <h5>IDR 500.000</h5>
-                                            </Col>
-                                        </Row>
-                                        <hr className="d-block d-lg-none" />
-                                    </Col>
-                                </Row>
-                            </div>
+            <Container className="mt-3">
+                <Row>
+                    <Col lg={6}>
+                        <div className="produk mt-5">
+                            <Card className="mb-3">
+                                <Card.Body>
+                                    <Row>
+                                        <Col lg={4}>
+                                            <Card.Img src="./src/assets/hp3.png" width="100%" alt="" />
+                                        </Col>
+                                        <Col lg={8}>
+                                            <h5>Iphone 15 Pro Max</h5>
+                                            <Form>
+                                                <Form.Label>Jumlah :</Form.Label>
+                                                <Form.Control
+                                                    type="number"
+                                                    name="jumlah"
+                                                    value={jumlah}
+                                                    onChange={handleJumlahChange}
+                                                    min={1}
+                                                />
+                                            </Form>
+                                            <label htmlFor="harga">Harga</label>
+                                            <h5>IDR {(hargaProduk * jumlah).toLocaleString()}</h5>
+                                        </Col>
+                                    </Row>
+                                </Card.Body>
+                            </Card>
+                        </div>
 
-                            <div className="info-buyer">
-                                <Form>
-                                    <Form.Label>Alamat</Form.Label>
-                                    <Form.Control as="textarea" name="alamat" id="alamat" placeholder="Masukkan Alamat" rows={5}>AutoFill Alamat</Form.Control>
-                                </Form>
+                        <div className="info-buyer">
+                            <Form>
+                                <Form.Label>Alamat</Form.Label>
+                                <Form.Control as="textarea" name="alamat" placeholder="Masukkan Alamat" rows={5} />
+                            </Form>
 
-                                <label htmlFor="pengiriman">Metode Pengiriman</label>
-                                <Form.Select name="pengiriman" id="pengiriman">
+                            <Form.Group className="mb-3 mt-3">
+                                <Form.Label>Metode Pengiriman</Form.Label>
+                                <Form.Select name="pengiriman" onChange={handleMetodePengirimanChange}>
                                     <option value="">-- Pilih Satu --</option>
-                                    <hr />
                                     <option value="reguler">Reguler | IDR 20.000</option>
                                     <option value="ekspres">Ekspres | IDR 50.000</option>
                                 </Form.Select>
+                            </Form.Group>
 
-                                <label htmlFor="bayar">Metode Pembayaran</label>
-                                <Form.Select name="bayar" id="bayar" onChange={tampilkanMetodePembayaran}>
+                            <Form.Group className="mb-3 mt-3">
+                                <Form.Label>Metode Pembayaran</Form.Label>
+                                <Form.Select name="bayar" onChange={handleMetodePembayaranChange}>
                                     <option value="">-- Pilih Satu --</option>
-                                    <hr />
                                     <option value="bank">Transfer Bank</option>
                                     <option value="gopay">Gopay</option>
                                 </Form.Select>
+                            </Form.Group>
 
-                                {/* tampilan bank dan gopay  */}
-
-                                <Row id="row-bank" style={{display : 'none'}}>
+                            {/* Tampilan Bank */}
+                            {metodePembayaran === 'bank' && (
+                                <Row id="row-bank">
                                     <Col md={3}>
                                         <img src="./src/assets/ic-bca.png" alt="" width="120px" />
                                     </Col>
@@ -87,8 +105,11 @@ const OrderPage = () => {
                                         <p>a.n Synofone</p>
                                     </Col>
                                 </Row>
+                            )}
 
-                                <Row id="row-gopay" style={{display : 'none'}}>
+                            {/* Tampilan Gopay */}
+                            {metodePembayaran === 'gopay' && (
+                                <Row id="row-gopay">
                                     <Col md={3}>
                                         <img src="./src/assets/ic-gopay.png" alt="" width="120px" />
                                     </Col>
@@ -98,24 +119,29 @@ const OrderPage = () => {
                                         <p>a.n Synofone</p>
                                     </Col>
                                 </Row>
-                            </div>
+                            )}
+                        </div>
+                    </Col>
 
-                            <div className="rincian mt-5 mb-5">
-                                <h6>Rincian Pembayaran</h6>
-                                <p>Harga : <b>IDR 500.000</b></p>
-                                <p>Ongkos Kirim : <b>IDR 20.000</b></p>
-                                <p>Total : <b>IDR 520.000</b></p>
-                            </div>
+                    <Col lg={6}>
+                        <div className="rincian mt-5">
+                            <h6>Rincian Pembayaran</h6>
+                            <p>Harga Produk: <b>IDR {(hargaProduk * jumlah).toLocaleString()}</b></p>
+                            <p>Ongkos Kirim ({metodePengiriman}): <b>IDR {metodePengiriman === 'reguler' ? '20,000' : metodePengiriman === 'ekspres' ? '50,000' : '0'}</b></p>
+                            <hr />
+                            <p>Total Belanja: <b>IDR {calculateTotalBelanja().toLocaleString()}</b></p>
+                        </div>
 
-                            <Link to="/status" className="btn btn-primary w-100">Konfirmasi</Link>
-                        </Col>
-                    </Row>
-                </Container>
-            </div>
+                        <Link to="/status" className="btn btn-primary w-100 mt-3">
+                            Konfirmasi
+                        </Link>
+                    </Col>
+                </Row>
+            </Container>
 
-            <FooterComponent/>
+            <FooterComponent />
         </>
     );
-}
+};
 
 export default OrderPage;
