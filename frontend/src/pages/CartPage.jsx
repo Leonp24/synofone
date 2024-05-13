@@ -12,7 +12,7 @@ const CartPage = () => {
     const handleRemoveItem = (itemId) => {
         const updatedItems = cartItems.filter(item => item.id !== itemId);
         setCartItems(updatedItems);
-        setShowModal(false); // Sembunyikan modal setelah menghapus item
+        setShowModal(false);
     };
 
     const handleJumlahChange = (event, itemId) => {
@@ -75,7 +75,7 @@ const CartPage = () => {
                                                                 />
                                                             </Form>
                                                             <p className="mt-2">Harga :</p>
-                                                            <h5>IDR {item.price}</h5>
+                                                            <h5>IDR {item.price * item.quantity}</h5>
                                                         </Col>
                                                         <Col className="text-end">
                                                             <Button
