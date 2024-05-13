@@ -8,54 +8,54 @@ const BrandComponent = () => {
                     {/* Desktop View */}
                     <Row>
                         <Col lg={2} className="d-none d-lg-block">
-                            <img src="./src/assets/ic-samsung.png" alt="" />
+                            <img src="/src/assets/ic-samsung.png" alt="" />
                         </Col>
 
                         <Col lg={2} className="d-none d-lg-block">
-                            <img src="./src/assets/ic-xiaomi.png" alt="" />
+                            <img src="/src/assets/ic-xiaomi.png" alt="" />
                         </Col>
 
                         <Col lg={2} className="d-none d-lg-block">
-                            <img src="./src/assets/ic-apple.png" alt="" />
+                            <img src="/src/assets/ic-apple.png" alt="" />
                         </Col>
 
                         <Col lg={2} className="d-none d-lg-block">
-                            <img src="./src/assets/ic-realme.png" alt="" />
+                            <img src="/src/assets/ic-realme.png" alt="" />
                         </Col>
 
                         <Col lg={2} className="d-none d-lg-block">
-                            <img src="./src/assets/ic-oppo.png" alt="" />
+                            <img src="/src/assets/ic-oppo.png" alt="" />
                         </Col>
 
                         <Col lg={2} className="d-none d-lg-block">
-                            <img src="./src/assets/ic-vivo.png" alt="" />
+                            <img src="/src/assets/ic-vivo.png" alt="" />
                         </Col>
                     </Row>
                     {/* Mobile View */}
                     <div className="mobile-brand d-block d-lg-none">
                         <Row>
                             <Col lg={2} xs={4}>
-                                <img src="./src/assets/ic-samsung.png" alt="" />
+                                <img src="/src/assets/ic-samsung.png" alt="" />
                             </Col>
 
                             <Col lg={2} xs={4}>
-                                <img src="./src/assets/ic-xiaomi.png" alt="" />
+                                <img src="/src/assets/ic-xiaomi.png" alt="" />
                             </Col>
 
                             <Col lg={2} xs={4}>
-                                <img src="./src/assets/ic-apple.png" alt="" />
+                                <img src="/src/assets/ic-apple.png" alt="" />
                             </Col>
 
                             <Col lg={2} xs={4}>
-                                <img src="./src/assets/ic-realme.png" alt="" />
+                                <img src="/src/assets/ic-realme.png" alt="" />
                             </Col>
 
                             <Col lg={2} xs={4}>
-                                <img src="./src/assets/ic-oppo.png" alt="" />
+                                <img src="/src/assets/ic-oppo.png" alt="" />
                             </Col>
 
                             <Col lg={2} xs={4}>
-                                <img src="./src/assets/ic-vivo.png" alt="" />
+                                <img src="/src/assets/ic-vivo.png" alt="" />
                             </Col>
                         </Row>
                     </div>

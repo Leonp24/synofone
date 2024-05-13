@@ -29,4 +29,4 @@ const StatusPage = () => {
     );
 }
 
-                export default StatusPage;
+export default StatusPage;

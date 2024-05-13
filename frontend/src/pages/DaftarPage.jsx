@@ -47,7 +47,7 @@ const DaftarPage = () => {
                         </Col>
 
                         <Col lg={6}>
-                            <img src="./src/assets/image 5.png" width="100%" alt="" />
+                            <img src="/src/assets/image 5.png" width="100%" alt="" />
                         </Col>
                     </Row>
                 </Container>

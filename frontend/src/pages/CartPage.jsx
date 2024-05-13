@@ -53,7 +53,7 @@ const CartPage = () => {
                                         <Row>
                                             <Col md={4}>
                                                 <img
-                                                    src={`./src/assets/${item.image}`}
+                                                    src={`/src/assets/${item.image}`}
                                                     width="100%"
                                                     alt={item.name}
                                                 />

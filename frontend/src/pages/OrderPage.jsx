@@ -47,7 +47,7 @@ const OrderPage = () => {
                                 <Card.Body>
                                     <Row>
                                         <Col lg={4}>
-                                            <Card.Img src="./src/assets/hp3.png" width="100%" alt="" />
+                                            <Card.Img src="/src/assets/hp3.png" width="100%" alt="" />
                                         </Col>
                                         <Col lg={8}>
                                             <h5>Iphone 15 Pro Max</h5>
@@ -97,7 +97,7 @@ const OrderPage = () => {
                             {metodePembayaran === 'bank' && (
                                 <Row id="row-bank">
                                     <Col md={3}>
-                                        <img src="./src/assets/ic-bca.png" alt="" width="120px" />
+                                        <img src="/src/assets/ic-bca.png" alt="" width="120px" />
                                     </Col>
                                     <Col md={9}>
                                         <p>Bank BCA</p>
@@ -111,7 +111,7 @@ const OrderPage = () => {
                             {metodePembayaran === 'gopay' && (
                                 <Row id="row-gopay">
                                     <Col md={3}>
-                                        <img src="./src/assets/ic-gopay.png" alt="" width="120px" />
+                                        <img src="/src/assets/ic-gopay.png" alt="" width="120px" />
                                     </Col>
                                     <Col md={9}>
                                         <p>Gopay</p>

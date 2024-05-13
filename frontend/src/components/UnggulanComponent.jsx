@@ -18,7 +18,7 @@ const UnggulanComponent = () => {
                 <Row>
                     <Col lg={3} className="d-none d-lg-block">
                         <Card>
-                            <img src="./src/assets/hp1.png" alt="" />
+                            <img src="/src/assets/hp1.png" alt="" />
                             <Card.Body>
                                 <Link className="card-text" to="/detail">Xiaomi Redmi Note 13</Link>
                                 <h5>IDR 500.000</h5>
@@ -27,7 +27,7 @@ const UnggulanComponent = () => {
                     </Col>
                     <Col lg={3} className="d-none d-lg-block">
                         <Card>
-                            <img src="./src/assets/hp2.png" alt="" />
+                            <img src="/src/assets/hp2.png" alt="" />
                             <Card.Body>
                                 <Link className="card-text" to="/detail">Oppo A79 5G</Link>
                                 <h5>IDR 500.000</h5>
@@ -36,7 +36,7 @@ const UnggulanComponent = () => {
                     </Col>
                     <Col lg={3} className="d-none d-lg-block">
                         <Card>
-                            <img src="./src/assets/hp3.png" alt="" />
+                            <img src="/src/assets/hp3.png" alt="" />
                             <Card.Body>
                                 <Link className="card-text" to="/detail">Iphone 15 Pro Max</Link>
                                 <h5>IDR 500.000</h5>
@@ -45,7 +45,7 @@ const UnggulanComponent = () => {
                     </Col>
                     <Col lg={3} className="d-none d-lg-block">
                         <Card>
-                            <img src="./src/assets/hp4.png" alt="" />
+                            <img src="/src/assets/hp4.png" alt="" />
                             <Card.Body>
                                 <Link className="card-text" to="/detail">Samsung Galaxy S23 FE</Link>
                                 <h5>IDR 500.000</h5>
@@ -65,7 +65,7 @@ const UnggulanComponent = () => {
                         <SwiperSlide>
                             <Col lg={3}>
                                 <Card>
-                                    <img src="./src/assets/hp1.png" alt="" />
+                                    <img src="/src/assets/hp1.png" alt="" />
                                     <Card.Body>
                                         <Link className="card-text" to="/detail">Xiaomi Redmi Note 13</Link>
                                         <h5>IDR 500.000</h5>
@@ -76,7 +76,7 @@ const UnggulanComponent = () => {
                         <SwiperSlide>
                             <Col lg={3}>
                                 <Card>
-                                    <img src="./src/assets/hp2.png" alt="" />
+                                    <img src="/src/assets/hp2.png" alt="" />
                                     <Card.Body>
                                         <Link className="card-text" to="/detail">Oppo A79 5G</Link>
                                         <h5>IDR 500.000</h5>
@@ -87,7 +87,7 @@ const UnggulanComponent = () => {
                         <SwiperSlide>
                             <Col lg={3}>
                                 <Card>
-                                    <img src="./src/assets/hp3.png" alt="" />
+                                    <img src="/src/assets/hp3.png" alt="" />
                                     <Card.Body>
                                         <Link className="card-text" to="/detail">Iphone 15 Pro Max</Link>
                                         <h5>IDR 500.000</h5>
@@ -98,7 +98,7 @@ const UnggulanComponent = () => {
                         <SwiperSlide>
                             <Col lg={3}>
                                 <Card>
-                                    <img src="./src/assets/hp4.png" alt="" />
+                                    <img src="/src/assets/hp4.png" alt="" />
                                     <Card.Body>
                                         <Link className="card-text" to="/detail">Samsung Galaxy S23 FE</Link>
                                         <h5>IDR 500.000</h5>

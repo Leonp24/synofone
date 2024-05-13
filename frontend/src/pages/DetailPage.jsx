@@ -4,8 +4,16 @@ import UnggulanComponent from "../components/UnggulanComponent";
 
 import { Container, Row, Col, Card, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const DetailPage = () => {
+    const [jumlah, setJumlah] = useState(1);
+
+    const handleJumlahChange = (event) => {
+        // ubah nilai jumlah saat input berubah
+        setJumlah(parseInt(event.target.value));
+    };
+
     return (
         <>
             <NavbarComponent />
@@ -14,7 +22,7 @@ const DetailPage = () => {
                     <Row>
                         <Col lg={5}>
                             <Card>
-                                <img src="./src/assets/hp3.png" alt="" />
+                                <img src="/src/assets/hp3.png" alt="" />
                             </Card>
                         </Col>
                         <Col lg={7}>
@@ -44,7 +52,13 @@ const DetailPage = () => {
                                 <Row>
                                     <Col lg={2}>
                                         <Form>
-                                            <Form.Control type="number" name="jumlah"/>
+                                            <Form.Control
+                                                type="number"
+                                                name="jumlah"
+                                                value={jumlah}
+                                                min={1}
+                                                onChange={handleJumlahChange}
+                                            />
                                         </Form>
                                     </Col>
                                     <Col lg="10">
@@ -59,8 +73,8 @@ const DetailPage = () => {
 
             <hr className="d-block d-lg-none mt-5" />
 
-            <UnggulanComponent/>
-            <FooterComponent/>
+            <UnggulanComponent />
+            <FooterComponent />
 
         </>
     );

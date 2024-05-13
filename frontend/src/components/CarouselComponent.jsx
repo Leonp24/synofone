@@ -13,13 +13,13 @@ const CarouselComponent = () => {
             <Container className="mt-5">
                 <Carousel activeIndex={index} onSelect={handleSelect}>
                     <Carousel.Item>
-                        <img src="./src/assets/slide1.png" alt="" />
+                        <img src="/src/assets/slide1.png" alt="" />
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img src="./src/assets/slide2.png" alt="" />
+                        <img src="/src/assets/slide2.png" alt="" />
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img src="./src/assets/slide3.png" alt="" />
+                        <img src="/src/assets/slide3.png" alt="" />
                     </Carousel.Item>
                 </Carousel>
             </Container>
