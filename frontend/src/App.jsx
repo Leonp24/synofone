@@ -10,7 +10,7 @@ import CartPage from './pages/CartPage'
 import OrderPage from './pages/OrderPage'
 import StatusPage from './pages/StatusPage'
 import FinishPage from './pages/FinishPage'
-
+import Users from './pages/Users'
 
 function App() {
   return (
@@ -24,6 +24,7 @@ function App() {
         <Route path='/order' Component={OrderPage} />
         <Route path='/status' Component={StatusPage} />
         <Route path='/finish' Component={FinishPage} />
+        <Route path='/users' Component={Users} />
       </Routes>
     </>
   )
